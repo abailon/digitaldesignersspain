@@ -1,5 +1,6 @@
 @charset "UTF-8";
-/*------------------------------------*    $STYLE
+/*------------------------------------*\
+    $STYLE
 \*------------------------------------*/
 /**
  * Aquí incluímos todos los módulos (archivos .scss) que se can
@@ -8,17 +9,21 @@
  * o comentes su inclusión para no tener estilos innecesarios en tu CSS final
  * y optimizar lo máximo posible.
  */
-/*------------------------------------*    $BORDER-BOX
+/*------------------------------------*\
+    $BORDER-BOX
 \*------------------------------------*/
 /**
  * Quieres todos los elementos tener un box-sizing:border-box?
  * paulirish.com/2012/box-sizing-border-box-ftw ?
  */
-/*------------------------------------*    $COLORS
+/*------------------------------------*\
+    $COLORS
 \*------------------------------------*/
-/*------------------------------------*    $MIXINS
+/*------------------------------------*\
+    $MIXINS
 \*------------------------------------*/
-/*------------------------------------*    $RESET
+/*------------------------------------*\
+    $RESET
 \*------------------------------------*/
 html, body, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, hgroup, menu, nav, section, time, mark, audio, video {
   margin: 0;
@@ -33,9 +38,11 @@ article, aside, figure, footer, header, nav, section {
   display: block; }
 
 /**
-    * Ningún padding jodiendo la marrana.
-    */
+* Ningún padding jodiendo la marrana.
+*/
 *, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   -ms-box-sizing: border-box;
   -o-box-sizing: border-box;
   box-sizing: border-box; }
@@ -78,23 +85,17 @@ li {
   list-style: none; }
 
 .wrapper-flex {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   height: 100%;
   width: 100%;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center; }
+  align-items: center;
+  align-content: center;
+  justify-content: center; }
   .wrapper-flex .column {
-    height: 100vh;
     width: 50%;
     padding: 72px 48px; }
+    .wrapper-flex .column:first-child {
+      height: 100vh; }
     .wrapper-flex .column.white {
       background-color: #fff; }
     .wrapper-flex .column.blue {
@@ -155,13 +156,11 @@ form {
     background-color: #ffffff;
     color: #304FFE;
     height: 40px;
-    -webkit-transition: all 250ms ease;
     transition: all 250ms ease;
     margin-bottom: 16px; }
   form input[type="email"]:focus {
     outline: none;
     border: 1px solid #304FFE;
-    -webkit-transition: all 250ms ease;
     transition: all 250ms ease; }
   form input[type="email"]::-webkit-input-placeholder {
     color: #101838;
@@ -179,11 +178,9 @@ form {
     background-color: #304FFE;
     color: #ffffff;
     cursor: pointer;
-    -webkit-transition: all 250ms ease;
     transition: all 250ms ease; }
     form .submit:hover {
       background-color: #101838;
-      -webkit-transition: all 250ms ease;
       transition: all 250ms ease;
       padding: 8px 24px; }
     form .submit.disabled {
@@ -191,7 +188,6 @@ form {
       background-color: #D1D2DB; }
       form .submit.disabled:hover {
         background-color: #D1D2DB;
-        -webkit-transition: all 250ms ease;
         transition: all 250ms ease;
         padding: 8px 16px; }
   form input {
@@ -199,13 +195,11 @@ form {
 
 @media (max-width: 768px) {
   .wrapper-flex {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column; }
+    flex-direction: column; }
     .wrapper-flex .column {
       width: 100%;
       padding: 40px 40px; }
+
   .logo img {
     display: block;
     width: 100%;
