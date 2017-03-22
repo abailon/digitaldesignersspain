@@ -29,11 +29,11 @@ a {
   text-decoration: none;
 }
 input,
-textarea, 
+textarea,
 select,
 button,
-a { 
-  outline: none; 
+a {
+  outline: none;
 }
 
 li {
@@ -48,31 +48,37 @@ li {
   align-items: center;
   align-content: center;
   justify-content: center;
-  
+
   .column {
-    height: 100vh;
+
+    &:first-child {
+      height: 100vh;
+    }
+    @media (min-width: 480px) {
+      height: 100vh;
+    }
     width: 50%;
     padding: 72px 48px;
-    
+
     &.white {
       background-color: #fff;
     }
     &.blue {
       background-color: #304FFE;
     }
-    
+
     .container {
       width: 100%;
       max-width: 560px;
-      
+
       &.visual-aligment{
         margin-top: -20%;
         max-width: 360px;
       }
     }
-    
+
   }
-  
+
 }
 
 
@@ -85,16 +91,16 @@ li {
 }
 
 h1{
-  
+
   &.description {
     font-size: 20px;
     line-height: 24px;
     color: #101838;
     font-weight: 400;
     padding: 32px 0px 16px 16px;
-    
+
   }
-  
+
 }
 
 h3 {
@@ -120,7 +126,7 @@ p {
   line-height: 24px;
   font-weight: 300;
   margin-bottom: 24px;
-  
+
 }
 
 
@@ -168,7 +174,7 @@ form {
     color: #ffffff;
     cursor: pointer;
     transition: all 250ms ease;
-    
+
     &:hover {
       background-color: #101838;
       transition: all 250ms ease;
@@ -177,7 +183,7 @@ form {
     &.disabled {
       cursor: default;
       background-color: #D1D2DB;
-      
+
        &:hover {
         background-color: #D1D2DB;
         transition: all 250ms ease;
